@@ -1,0 +1,226 @@
+.section {
+    padding: 70px 0;
+}
+
+.container {
+    background: #fff9c7;
+
+    border-radius: 12px;
+
+    padding: 40px;
+}
+
+.container h2 {
+    text-align: center;
+
+    color: var(--primary-blue);
+
+    font-size: 40px;
+
+    font-weight: 700;
+}
+
+.line {
+    width: 70px;
+    height: 4px;
+
+    background: var(--accent-yellow);
+
+    margin: 12px auto 40px;
+}
+
+.steps {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.step {
+    flex: 1;
+
+    text-align: center;
+}
+
+.iconWrapper {
+    position: relative;
+
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 15px;
+
+    background: #ECECFF;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconWrapper svg {
+    color: var(--primary-blue);
+
+    font-size: 28px;
+}
+
+.iconWrapper span {
+    position: absolute;
+
+    top: -5px;
+    left: -5px;
+
+    width: 22px;
+    height: 22px;
+
+    background: var(--accent-yellow);
+
+    color: var(--white);
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step h4 {
+    color: var(--primary-blue);
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.arrow {
+    color: #888;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width:1024px){
+
+    .section{
+        padding:60px 0;
+    }
+
+    .container{
+        padding:35px 30px;
+    }
+
+    .container h2{
+        font-size:34px;
+        line-height:1.3;
+    }
+
+    .line{
+        margin:12px auto 35px;
+    }
+
+    .steps{
+        flex-direction:column;
+        align-items:center;
+        gap:35px;
+    }
+
+    .step{
+        max-width:420px;
+        width:100%;
+    }
+
+    .iconWrapper{
+        width:72px;
+        height:72px;
+    }
+
+    .iconWrapper svg{
+        font-size:26px;
+    }
+
+    .step h4{
+        font-size:18px;
+    }
+
+    .step p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .arrow{
+        display:none;
+    }
+
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width:600px){
+
+    .section{
+        padding:50px 0;
+    }
+
+    .container{
+        padding:25px 20px;
+        border-radius:18px;
+    }
+
+    .container h2{
+        font-size:28px;
+    }
+
+    .line{
+        width:60px;
+        margin:12px auto 30px;
+    }
+
+    .step{
+        max-width:100%;
+    }
+
+    .iconWrapper{
+        width:68px;
+        height:68px;
+    }
+
+    .iconWrapper svg{
+        font-size:24px;
+    }
+
+    .iconWrapper span{
+        width:20px;
+        height:20px;
+        font-size:11px;
+    }
+
+    .step h4{
+        font-size:16px;
+    }
+
+    .step p{
+        font-size:14px;
+    }
+
+}

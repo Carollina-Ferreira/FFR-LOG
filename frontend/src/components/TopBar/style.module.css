@@ -1,0 +1,147 @@
+.topbar{
+    height:35px;
+    background:var(--primary-blue);
+}
+
+.content{
+    height:100%;
+    width:min(1200px,92%);
+
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ========================= */
+/* CONTATOS */
+/* ========================= */
+
+.left{
+    display:flex;
+    align-items:center;
+
+    gap:25px;
+}
+
+.left a{
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+    color:var(--white);
+    text-decoration:none;
+    
+    font-size:12px;
+    transition:.3s;
+}
+
+.left a:hover{
+    color:var(--accent-yellow);
+}
+
+.left svg{
+    font-size:15px;
+}
+
+/* ========================= */
+/* REDES SOCIAIS */
+/* ========================= */
+
+.right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.right span{
+    color:var(--light-gray);
+    font-size:13px;
+}
+
+
+.right a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--white);
+    font-size:15px;
+    transition:.3s;
+}
+
+.right a:hover{
+    color:var(--accent-yellow);
+    transform:translateY(-2px);
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media(max-width:900px){
+
+    .content{
+        width:92%;
+    }
+
+    .left{
+        gap:15px;
+    }
+
+    .right{
+        gap:12px;
+    }
+}
+
+ /* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media(max-width:600px){
+
+    .topbar{
+        height:auto;
+        padding:8px 0;
+    }
+
+    .content{
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .left{
+        gap:12px;
+    }
+
+    .left a{
+        font-size:12px;
+    }
+
+    .right{
+        gap:10px;
+    }
+
+    .right span{
+        display:none;
+    }
+}
+
+/* ========================= */
+/* CELULAR PEQUENO */
+/* ========================= */
+
+@media(max-width:400px){
+
+    .left a span{
+        display:none;
+    }
+
+    .left{
+        gap:15px;
+    }
+
+    .right a{
+        font-size:16px;
+    }
+}

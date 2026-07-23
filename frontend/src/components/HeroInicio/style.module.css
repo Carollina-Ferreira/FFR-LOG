@@ -1,0 +1,228 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(90deg,
+      rgba(0, 27, 133, 0.98) 0%,
+      rgba(0, 27, 134, 0.90) 35%,
+      rgba(0, 27, 134, 0.65) 55%,
+      rgba(0, 27, 134, 0.25) 75%,
+      rgba(0, 27, 134, 0) 100%),
+    url("../../assets/images/moto\ e\ van.png");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: auto;
+  position: relative;
+  z-index: 5;
+}
+
+.left {
+  max-width: 620px;
+}
+
+.left h4 {
+  color: var(--accent-yellow);
+  letter-spacing: 5px;
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.left h1 {
+  color: var(--white);
+  font-size: 50px;
+  line-height: 1.08;
+  margin-bottom: 28px;
+  font-weight: 800;
+}
+
+.left h1 span {
+  color: var(--accent-yellow);
+}
+
+.left p {
+  color: var(--light-gray);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.buttons {
+  display: flex;
+  gap: 18px;
+  margin-top: 45px;
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  text-decoration: none;
+
+  border-radius: 14px;
+  transition: .3s;
+  font-weight: 700;
+}
+
+.primary {
+  background: var(--secondary-red);
+  color: var(--white);
+  padding: 18px 34px;
+}
+
+.primary:hover {
+  transform: translateY(-4px);
+  background: var(--dark-red);
+}
+
+.secondary {
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 16px 34px;
+}
+
+.secondary:hover {
+  background: var(--white);
+  color: var(--primary-blue);
+}
+
+/* ============================== */
+/* TABLET */
+/* ============================== */
+
+@media(max-width:992px) {
+
+  .hero {
+    min-height: auto;
+    padding: 100px 0 100px;
+    background-position: center;
+  }
+
+  .left {
+    max-width: 700px;
+    transform: none;
+  }
+
+  .left h4 {
+    font-size: 2rem;
+    text-align: left;
+    letter-spacing: 4px;
+  }
+
+
+  .left h1 {
+    text-align: left;
+    font-size: 42px;
+  }
+
+  .left p {
+    text-align: left;
+  }
+
+  .buttons {
+    margin-top: 35px;
+    gap: 15px;
+  }
+
+  .primary,
+  .secondary {
+    padding: 14px 24px;
+    font-size: 15px;
+    width: auto;
+  }
+}
+
+/* ============================== */
+/* CELULAR */
+/* ============================== */
+
+@media(max-width:768px) {
+
+  .hero {
+    min-height: 100vh;
+    padding: 90px 0;
+
+    background-position: center;
+
+    background-image:
+      linear-gradient(90deg,
+        rgba(0, 27, 134, .95) 0%,
+        rgba(0, 27, 134, .75) 45%,
+        rgba(0, 27, 134, .35) 75%,
+        rgba(0, 27, 134, .15) 100%),
+      url("../../assets/images/moto\ e\ van.png");
+  }
+
+  .left {
+    transform: none;
+  }
+
+  .left h4 {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  .left h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .left p {
+    font-size: 16px;
+    line-height: 1.6;
+
+  }
+
+  .buttons {
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .primary,
+  .secondary {
+    width: auto;
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+}
+
+/* ============================== */
+/* CELULAR PEQUENO */
+/* ============================== */
+
+@media(max-width:400px) {
+
+  .left h1 {
+    font-size: 30px;
+  }
+
+  .left p {
+    font-size: 15px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  .primary,
+  .secondary {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .circle1 {
+    width: 300px;
+    height: 300px;
+  }
+}

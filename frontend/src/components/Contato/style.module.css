@@ -1,0 +1,186 @@
+.section {
+    width:100%;
+    padding:35px 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,27,134,.98) 0%,
+        rgba(0,27,134,.90) 45%,
+        rgba(0,27,134,.70) 75%,
+        rgba(0,27,134,.55) 100%
+    ),
+    url("../../assets/images/van estrada.png");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.container {
+  width: min(1200px, 92%);
+
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 80px;
+}
+
+/* ========================= */
+/* CONTEÚDO */
+/* ========================= */
+
+.content h2 {
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.content h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--accent-yellow);
+  border-radius: 999px;
+  margin-top: 18px;
+}
+
+.content p {
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 620px;
+}
+
+/* ========================= */
+/* BOTÃO */
+/* ========================= */
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+  padding: 20px 42px;
+
+  background: var(--secondary-red);
+  color: var(--white);
+
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+
+  transition: all .35s ease;
+  white-space: nowrap;
+}
+
+.button:hover {
+  background: var(--dark-red);
+  transform: translateY(-5px);
+}
+
+.button svg {
+  transition: transform .3s ease;
+}
+
+.button:hover svg {
+  transform: translateX(5px);
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media(max-width:900px){
+
+    .section{
+        padding:45px 0;
+    }
+
+    .container{
+        grid-template-columns:1fr auto;
+        gap:35px;
+    }
+
+    .content h2{
+        font-size:1.8rem;
+    }
+
+    .content p{
+        font-size:15px;
+    }
+
+    .button{
+        padding:16px 28px;
+        font-size:15px;
+    }
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media(max-width:600px){
+
+    .section{
+        padding:45px 0;
+        background-position:center;
+    }
+
+    .container{
+        grid-template-columns:1fr;
+        gap:25px;
+        text-align:center;
+    }
+
+    .content h2{
+        font-size:1.6rem;
+    }
+
+    .content h2::after{
+        margin:15px auto 0;
+    }
+
+    .content p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .action{
+        justify-content:center;
+    }
+
+    .button{
+        width:auto;
+        max-width:none;
+
+        padding:15px 30px;
+        font-size:14px;
+    }
+}
+
+/* ========================= */
+/* CELULAR PEQUENO */
+/* ========================= */
+
+@media(max-width:400px){
+
+    .content h2{
+        font-size:1.4rem;
+    }
+
+    .button{
+        padding:14px 25px;
+    }
+}

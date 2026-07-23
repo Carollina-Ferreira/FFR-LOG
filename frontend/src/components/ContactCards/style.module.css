@@ -1,0 +1,379 @@
+.cards {
+  padding: 60px 0;
+  position: relative;
+  margin-top: -143px;
+  z-index: 20;
+}
+
+.cardsWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* CARD ESQUERDO */
+.cardLeft {
+  width: 400px;
+  min-height: 450px;
+  background-color: var(--white);
+  border-radius: 18px;
+  padding: 25px;
+  color: var(--primary-blue);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 15px var(--sombra);
+}
+
+.lineRed {
+  width: 55px;
+  height: 3px;
+  background: var(--secondary-red);
+}
+
+/* contatos */
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info {
+  width: 62px;
+  height: 62px;
+}
+
+/* ===================== CARD AZUL ===================== */
+
+.cardBlue {
+  margin-top: 15px;
+  background-color: var(--primary-blue);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.blueRow {
+  display: flex;
+}
+
+.blueCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.imgBlue {
+  width: 40px;
+  height: 40px;
+}
+
+.blueCol h6 {
+  margin: 0;
+  font-size: 10px;
+  color: var(--white);
+  align-items: center;
+
+}
+
+.dividerVertical {
+  width: 1px;
+  height: 40px;
+  background: var(--light-black);
+}
+
+/* ===================== FORM ===================== */
+
+.cardRight {
+  width: 550px;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 15px var(--sombra);
+}
+
+.cardRight h3 {
+  color: var(--primary-blue);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.lineRed {
+  width: 60px;
+  height: 4px;
+  background: var(--secondary-red);
+  margin-bottom: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: var(--text-light);
+  font-size: 18px;
+}
+
+.iconTextarea {
+  position: absolute;
+  left: 16px;
+  top: 18px;
+
+  color: var(--text-light);
+  font-size: 18px;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+
+  border: 1px solid var(--dark-border);
+  border-radius: 7px;
+
+  background: var(--white);
+  outline: none;
+
+  color: var(--text-dark);
+  padding-left: 50px;
+  transition: 0.3s;
+}
+
+.inputGroup input {
+  height: 42px;
+}
+
+.inputGroup textarea {
+  height: 150px;
+  padding-top: 16px;
+  resize: none;
+}
+
+.inputGroup textarea+.icon {
+  top: 20px;
+  transform: none;
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: var(--text-light);
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px var(--sombra);
+}
+
+.form button {
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+
+  border: none;
+  border-radius: 12px;
+  background: var(--secondary-red);
+  color: var(--white);
+
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+}
+
+h5 {
+  color: var(--secondary-red);
+}
+
+p {
+  color: var(--text-light);
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media(max-width:992px){
+
+    .cards{
+        margin-top:-100px;
+        padding:50px 0;
+    }
+
+    .cardsWrapper{
+        width:min(700px,92%);
+        margin:auto;
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .cardLeft,
+    .cardRight{
+        width:100%;
+    }
+
+    .cardLeft{
+        min-height:auto;
+    }
+
+    .cardBlue{
+        margin-top:20px;
+        padding:18px;
+    }
+
+    .blueRow{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+    }
+
+    .dividerVertical{
+        display:block;
+    }
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media(max-width:600px){
+
+    .cards{
+        margin-top:-70px;
+        padding:40px 0;
+    }
+
+    .cardsWrapper{
+        width:92%;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .cardLeft,
+    .cardRight{
+        width:100%;
+        padding:20px;
+        border-radius:16px;
+    }
+
+    .contactItem{
+        gap:10px;
+    }
+
+    .info{
+        width:50px;
+        height:50px;
+    }
+
+    .cardBlue{
+        padding:18px 15px;
+    }
+
+    .blueRow{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+
+        gap:18px;
+    }
+
+    .dividerVertical{
+        display:none;
+    }
+
+    .blueCol{
+        width:90px;
+        padding:8px 0;
+    }
+
+    .imgBlue{
+        width:32px;
+        height:32px;
+    }
+
+    .blueCol h6{
+        font-size:11px;
+        line-height:1.4;
+    }
+
+    .cardRight h3{
+        font-size:1.15rem;
+    }
+
+    .inputGroup input{
+        height:46px;
+    }
+
+    .inputGroup textarea{
+        height:130px;
+    }
+
+    .form button{
+        height:52px;
+        font-size:16px;
+        margin-top:20px;
+    }
+}
+
+/* ========================= */
+/* CELULAR PEQUENO */
+/* ========================= */
+
+@media(max-width:400px){
+
+    .cards{
+        margin-top:-55px;
+    }
+
+    .cardLeft,
+    .cardRight{
+        padding:18px;
+    }
+
+    .cardBlue{
+        padding:15px;
+    }
+
+    .blueCol{
+        width:80px;
+    }
+
+    .imgBlue{
+        width:28px;
+        height:28px;
+    }
+
+    .blueCol h6{
+        font-size:10px;
+    }
+
+    .cardRight h3{
+        font-size:1rem;
+    }
+
+    .form button{
+        height:48px;
+        font-size:15px;
+    }
+}

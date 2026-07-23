@@ -1,0 +1,189 @@
+.container {
+    background: var(--primary-blue);
+    padding: 35px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.iconCircle {
+    width: 90px;
+    height: 90px;
+
+    border: 1px solid var(--light-border);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconCircle svg {
+    font-size: 42px;
+    color: var(--accent-yellow);
+}
+
+.left h2 {
+    color: var(--white);
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.left span {
+    color: var(--accent-yellow);
+}
+
+.divider {
+    width: 1px;
+    height: 70px;
+    background: var(--light-border);
+}
+
+.center p {
+    color: var(--white);
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.button {
+    height: 56px;
+    padding: 0 28px;
+
+    border: 2px solid var(--accent-yellow);
+    border-radius: 12px;
+
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: .3s;
+}
+
+.button:hover {
+    background: var(--light-black);
+}
+
+.button svg {
+    color: var(--accent-yellow);
+    font-size: 20px;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width:1024px){
+
+    .container{
+        padding:40px 30px;
+        flex-direction:column;
+        align-items:center;
+        gap:28px;
+    }
+
+    .divider{
+        display:none;
+    }
+
+    .left{
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:flex-start;
+        gap:18px;
+    }
+
+    .iconCircle{
+        width:80px;
+        height:80px;
+        flex-shrink:0;
+    }
+
+    .iconCircle svg{
+        font-size:36px;
+    }
+
+    .left h2{
+        font-size:24px;
+        line-height:1.3;
+    }
+
+    .center{
+        display:none;
+    }
+
+    .button{
+        width:100%;
+        max-width:320px;
+        height:54px;
+        margin:0 auto;
+        justify-content:center;
+    }
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width:600px){
+
+    .container{
+        padding:30px 20px;
+        gap:24px;
+    }
+
+    .left{
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:flex-start;
+        gap:15px;
+    }
+
+    .iconCircle{
+        width:65px;
+        height:65px;
+    }
+
+    .iconCircle svg{
+        font-size:28px;
+    }
+
+    .left h2{
+        font-size:20px;
+        line-height:1.4;
+    }
+
+    .center{
+        display:none;
+    }
+
+   .button{
+    width:auto;
+
+    min-width:220px;
+    max-width:260px;
+    height:48px;
+    padding:0 22px;
+
+    margin:0 auto;
+    justify-content:center;
+
+    font-size:14px;
+    border-radius:10px;
+}
+}

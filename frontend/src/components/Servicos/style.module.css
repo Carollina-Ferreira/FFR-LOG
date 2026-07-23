@@ -1,0 +1,123 @@
+.section {
+    width:100%;
+    background:var(--primary-blue);
+    padding:70px 0;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.container {
+    width:min(1200px,90%);
+
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px 80px;
+
+    position:relative;
+    z-index:2;
+}
+
+.item {
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+
+    color:var(--white);
+
+    font-size:18px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.item:hover {
+    transform:translateX(8px);
+}
+
+.line {
+    width:2px;
+    height:45px;
+    background:var(--white);
+    border-radius:10px;
+    opacity:.25;
+    flex-shrink:0;
+}
+
+.icon {
+    color:var(--accent-yellow);
+    font-size:32px;
+    flex-shrink:0;
+    transition:.3s;
+}
+
+.item:hover .icon {
+    transform:scale(1.15);
+}
+
+.item span {
+    line-height:1.5;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media(max-width:900px){
+
+    .section{
+        padding:60px 0;
+    }
+
+    .container{
+        gap:30px 40px;
+    }
+
+    .item{
+        font-size:16px;
+        gap:15px;
+    }
+
+    .icon{
+        font-size:28px;
+    }
+
+    .line{
+        height:38px;
+    }
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media(max-width:700px){
+
+    .section{
+        padding:50px 0;
+    }
+
+    .container{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .item{
+        font-size:15px;
+        gap:14px;
+    }
+
+    .icon{
+        font-size:26px;
+    }
+
+    .line{
+        height:35px;
+    }
+
+    .item:hover{
+        transform:none;
+    }
+}

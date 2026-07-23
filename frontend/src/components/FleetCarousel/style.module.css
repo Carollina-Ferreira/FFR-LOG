@@ -1,0 +1,479 @@
+.section {
+  width: 100%;
+  padding: 36px 0 20px;
+  background: var(--white);
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* ========================= */
+/* MAPA DE FUNDO */
+/* ========================= */
+
+.section::before {
+  content: "";
+  position: absolute;
+
+  top: 40px;
+  right: 0;
+  width: 55%;
+  height: 500px;
+
+  background: url("../../assets/images/mapa\ sem\ fundo.png") no-repeat right center;
+  background-size: contain;
+   mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* ========================= */
+/* TOPO */
+/* ========================= */
+
+.top {
+  width: min(1200px,92%);
+  margin: auto;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================= */
+/* TEXTO */
+/* ========================= */
+
+.content{
+  width:520px;
+}
+
+.content h2{
+    font-size:38px;   
+    line-height:1.15;
+    font-weight:800;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.content p{
+    font-size:16px;   
+    line-height:1.8;
+}
+
+.subtitle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:6px 16px;
+    border:2px solid var(--primary-blue);
+    border-radius:999px;
+    color:var(--primary-blue);
+
+    font-size:12px;
+    font-weight:700;
+
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.blue{
+  color:var(--primary-blue);
+}
+
+.red{
+  color: var(--secondary-red);
+}
+
+/* ========================= */
+/* BOTÃO */
+/* ========================= */
+
+.button{
+  margin-top:38px;
+
+  display:inline-flex;
+  align-items:center;
+
+  gap:14px;
+  padding:18px 36px;
+  border-radius:999px;
+
+  text-decoration:none;
+  background:var(--accent-yellow);
+
+  color: var(--primary-blue);
+
+  font-weight:700;
+  transition:.35s ease;
+}
+
+.button svg{
+  transition:.35s;
+}
+
+.button:hover{
+  background:var(--secondary-red);
+  color: var(--white);
+  transform:translateY(-4px);
+}
+
+.button:hover svg{
+  transform:translateX(6px);
+}
+
+/* ========================= */
+/* ESTRADA */
+/* ========================= */
+
+.roadWrapper{
+    width:100%;
+    position:relative;
+}
+
+.road{
+    width:90%;
+    height:50px;
+
+    background:var(--dark-blue);
+    border-radius:999px;
+
+    position:absolute;
+
+    left:50%;
+    transform:translateX(-50%);
+    top:120px;
+    z-index:1;
+
+    overflow:hidden;
+    box-shadow:
+        inset 0 4px 8px #ffffff1f,
+        inset 0 -4px 8px #00000033;
+
+}
+
+/* Faixa central */
+
+.centerLine{
+    position:absolute;
+
+    top:50%;
+    left:0;
+    width:100%;
+    height:4px;
+
+    transform:translateY(-50%);
+
+    background-image:repeating-linear-gradient(
+        to right,
+        var(--accent-yellow) 0px,
+        var(--accent-yellow) 35px,
+        transparent 35px,
+        transparent 70px
+    );
+}
+
+/* ========================= */
+/* CARROSSEL */
+/* ========================= */
+
+.carousel{
+    width:min(1200px,92%);
+
+    margin:auto;
+    overflow:hidden;
+    position:relative;
+
+    z-index:2;
+}
+
+.track{
+    display:flex;
+    align-items:flex-end;
+    width:max-content;
+    animation:slide 18s linear infinite;
+
+    gap:70px;
+}
+
+.carousel:hover .track{
+    animation-play-state:paused;
+}
+
+/* ========================= */
+/* ITEM */
+/* ========================= */
+
+.item{
+    width:220px;
+    height:200px;
+    flex-shrink:0;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    position:relative;
+}
+
+/* ========================= */
+/* VEÍCULO */
+/* ========================= */
+
+.item img{
+    position:relative;
+
+    z-index:5;
+}
+
+.vehicleImage{
+    max-width:220px;
+    max-height:170px;
+
+    object-fit:contain;
+
+    transition:.35s;
+}
+
+.item:hover img{
+    transform:translateY(-10px);
+}
+
+/* ========================= */
+/* BOLINHA */
+/* ========================= */
+
+.dot{
+    position:absolute;
+
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:18px;
+    height:18px;
+    border-radius:50%;
+
+    background: var(--accent-yellow);
+    border:2px solid var(--white);
+
+    z-index:10;
+    transition:.3s;
+}
+
+.item:hover .dot{
+    transform:translateX(-50%) scale(1.2);
+}
+
+.item:hover .dot{
+    transform:scale(1.2);
+}
+
+/* ========================= */
+/* LEGENDA */
+/* ========================= */
+
+.vehicleTitle{
+    position:absolute;
+
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:200px;
+
+    text-align:center;
+
+    color:var(--primary-blue);
+
+    font-size:14px;
+    font-weight:700;
+    line-height:1.5;
+}
+
+/* ========================= */
+/* ANIMAÇÃO */
+/* ========================= */
+
+@keyframes slide{
+
+    from{
+        transform:translateX(-50%);
+    }
+
+    to{
+        transform:translateX(0);
+    }
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media(max-width:992px){
+
+    .section{
+        padding:40px 0 25px;
+    }
+
+    .section::before{
+        width:65%;
+        height:400px;
+        opacity:.35;
+    }
+
+    .top{
+        width:90%;
+    }
+
+    .content{
+        width:100%;
+    }
+
+    .content h2{
+        font-size:34px;
+        line-height:1.2;
+    }
+
+    .content p{
+        font-size:16px;
+        max-width:500px;
+    }
+
+    .button{
+        margin-top:30px;
+        padding:14px 28px;
+        font-size:15px;
+    }
+
+    .road{
+        top:105px;
+        height:45px;
+    }
+
+    .track{
+        gap:55px;
+    }
+
+    .item{
+        width:190px;
+        height:180px;
+    }
+
+    .vehicleImage{
+        max-width:190px;
+        max-height:145px;
+    }
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media(max-width:600px){
+
+    .section{
+        padding:30px 0 20px;
+    }
+
+    .section::before{
+        width:100%;
+        height:250px;
+        top:20px;
+        opacity:.18;
+    }
+
+    .subtitle{
+        font-size:11px;
+        padding:5px 14px;
+    }
+
+    .content h2{
+        font-size:26px;
+        line-height:1.25;
+    }
+
+    .content p{
+        font-size:14px;
+        line-height:1.6;
+        padding:0 15px;
+    }
+
+    .button{
+        margin-top:25px;
+        padding:12px 22px;
+        font-size:13px;
+    }
+
+    .road{
+        top:90px;
+        height:35px;
+    }
+
+    .centerLine{
+        height:3px;
+    }
+
+    .carousel{
+        width:100%;
+    }
+
+    .track{
+        gap:35px;
+    }
+
+    .item{
+        width:150px;
+        height:150px;
+    }
+
+    .vehicleImage{
+        max-width:150px;
+        max-height:115px;
+    }
+
+    .dot{
+        width:13px;
+        height:13px;
+        bottom:10px;
+    }
+
+    .vehicleTitle{
+        width:140px;
+        font-size:11px;
+        bottom:-5px;
+    }
+}
+
+/* ========================= */
+/* CELULAR PEQUENO */
+/* ========================= */
+
+@media(max-width:400px){
+
+    .content h2{
+        font-size:23px;
+    }
+
+    .content p{
+        font-size:13px;
+    }
+
+    .button{
+        padding:11px 18px;
+    }
+
+    .item{
+        width:135px;
+        height:140px;
+    }
+
+    .vehicleImage{
+        max-width:135px;
+        max-height:100px;
+    }
+
+    .track{
+        gap:25px;
+    }
+
+}

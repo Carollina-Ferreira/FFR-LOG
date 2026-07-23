@@ -1,0 +1,529 @@
+.section {
+    position: relative;
+    margin-top: -95px;
+    z-index: 20;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 35px;
+}
+
+/* ========================= */
+/* CARD FORMULÁRIO */
+/* ========================= */
+
+.formCard {
+    flex: 1;
+    max-width: 650px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow: 0 12px 30px var(--sombra);
+}
+
+.formCard h2 {
+    color: var(--primary-blue);
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.lineRed {
+    width: 65px;
+    height: 4px;
+
+    background: var(--secondary-red);
+
+    border-radius: 999px;
+    margin-bottom: 28px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+
+    margin: 10px 0 8px;
+
+    color: var(--primary-blue);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ========================= */
+/* INPUTS */
+/* ========================= */
+
+.inputGroup {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.inputGroup svg {
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--text-dark);
+    opacity: .65;
+
+    font-size: 18px;
+}
+
+.textIcon {
+    top: 20px !important;
+    transform: none !important;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+    width: 100%;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--white);
+
+    color: var(--text-dark);
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+.inputGroup input,
+.inputGroup select {
+    height: 50px;
+
+    padding-left: 48px;
+    padding-right: 15px;
+}
+
+.inputGroup textarea {
+    height: 140px;
+
+    resize: none;
+
+    padding: 18px 16px 18px 48px;
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+    color: var(--text-light);
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px var(--sombra);
+}
+
+/* ========================= */
+/* BOTÃO */
+/* ========================= */
+
+button {
+    width: 100%;
+    height: 56px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 12px;
+    background: var(--secondary-red);
+
+    color: var(--white);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover {
+    background: var(--dark-red);
+    transform: translateY(-3px);
+}
+
+/* ========================= */
+/* CARD DIREITO */
+/* ========================= */
+
+.infoCard {
+    width: 380px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 12px 30px var(--sombra);
+}
+
+/* PARTE BRANCA */
+
+.infoContent {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px;
+
+    gap: 18px;
+}
+
+.infoCard h2 {
+    color: var(--primary-blue);
+
+    font-size: 22px;
+    font-weight: 800;
+
+    margin: 0;
+}
+
+.infoContent .lineRed {
+    margin-bottom: 8px;
+}
+
+.infoItem {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+}
+
+.infoItem svg {
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    padding: 13px;
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    color: var(--accent-yellow);
+
+    box-shadow: 0 8px 18px var(--sombra);
+}
+
+.infoItem h4 {
+    color: var(--primary-blue);
+
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.infoItem p {
+    color: var(--text-light);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+/* ========================= */
+/* BOX DE CONTATO */
+/* ========================= */
+
+.contactBox {
+    margin-top: auto;
+
+    background: var(--primary-blue);
+
+    padding: 28px;
+}
+
+.contactBox h3 {
+    color: var(--accent-yellow);
+
+    font-size: 24px;
+    font-weight: 700;
+
+    margin-bottom: 6px;
+}
+
+.contactBox > p {
+    color: var(--light-gray);
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+/* ========================= */
+/* CONTATOS */
+/* ========================= */
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.contact:last-child {
+    margin-bottom: 0;
+}
+
+.contactIcon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, .18);
+    background: rgba(255, 255, 255, .05);
+}
+
+.contactIcon svg {
+    color: var(--accent-yellow);
+    font-size: 18px;
+}
+
+.contactInfo h5 {
+    margin: 0 0 4px;
+
+    color: var(--white);
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.contactInfo span {
+    color: var(--accent-yellow);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
+
+@media (max-width: 992px) {
+
+    .section {
+        margin-top: -70px;
+        padding-bottom: 60px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .formCard,
+    .infoCard {
+        width: 100%;
+        max-width: 720px;
+    }
+
+    .formCard {
+        padding: 30px;
+    }
+
+    .infoContent {
+        padding: 30px;
+        gap: 20px;
+    }
+
+    .contactBox {
+        padding: 30px;
+    }
+
+    .infoItem {
+        gap: 14px;
+    }
+
+    .infoItem svg {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+
+        padding: 11px;
+    }
+
+    .infoItem h4 {
+        font-size: 17px;
+    }
+
+    .infoItem p {
+        font-size: 15px;
+    }
+
+    .contactIcon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .contactIcon svg {
+        font-size: 17px;
+    }
+
+    .contactInfo h5 {
+        font-size: 15px;
+    }
+
+    .contactInfo span {
+        font-size: 14px;
+    }
+}
+
+/* ================================================= */
+/* CELULAR */
+/* ================================================= */
+
+@media (max-width: 600px) {
+
+    .section {
+        margin-top: -100px;
+        padding-bottom: 50px;
+    }
+
+    .container {
+        gap: 22px;
+    }
+
+    .formCard {
+        padding: 22px;
+        border-radius: 16px;
+    }
+
+    .infoCard {
+        width: 100%;
+        border-radius: 16px;
+    }
+
+    .infoContent {
+        padding: 22px;
+        gap: 18px;
+    }
+
+    .formCard h2,
+    .infoCard h2 {
+        font-size: 20px;
+    }
+
+    .lineRed {
+        width: 55px;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    .inputGroup input,
+    .inputGroup select {
+        height: 48px;
+        font-size: 15px;
+    }
+
+    .inputGroup textarea {
+        height: 130px;
+        font-size: 15px;
+    }
+
+    button {
+        height: 52px;
+        font-size: 15px;
+    }
+
+    .infoItem {
+        gap: 12px;
+    }
+
+    .infoItem svg {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+
+        padding: 10px;
+    }
+
+    .infoItem h4 {
+        font-size: 16px;
+    }
+
+    .infoItem p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .contactBox {
+        padding: 22px;
+    }
+
+    .contact {
+        gap: 12px;
+    }
+
+    .contactIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contactIcon svg {
+        font-size: 16px;
+    }
+
+    .contactInfo h5 {
+        font-size: 14px;
+    }
+
+    .contactInfo span {
+        font-size: 13px;
+    }
+}
+
+input:valid,
+select:valid,
+textarea:valid{
+
+    border-color:#16a34a;
+
+}
+
+input:focus:valid,
+select:focus:valid,
+textarea:focus:valid{
+
+    box-shadow:0 0 0 4px rgba(22,163,74,.12);
+
+}

@@ -1,0 +1,302 @@
+.section{
+    width:100%;
+    background:var(--primary-blue);
+    padding:30px 0;
+}
+
+.container{
+    width:min(1400px,94%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:470px 180px 180px 180px 260px;
+    align-items:center;
+    gap:0;
+}
+
+/* ========================= */
+/* LADO ESQUERDO */
+/* ========================= */
+
+.left{
+    display:flex;
+    align-items:center;
+
+    gap:22px;
+    padding-right:35px;
+}
+
+.mainIcon{
+    font-size:60px;
+    color:var(--accent-yellow);
+    flex-shrink:0;
+}
+
+.left h2{
+    color:var(--white);
+    font-size: 18px;
+    font-weight:800;
+}
+
+.left h2 span{
+    color:var(--accent-yellow);
+}
+
+/* ========================= */
+/* ITENS */
+/* ========================= */
+
+.item{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    min-height:120px;
+    border-left:1px solid var(--light-black);
+}
+
+/* ========================= */
+/* ÍCONES */
+/* ========================= */
+
+.icon{
+    font-size:36px;
+    color:var(--accent-yellow);
+    margin-bottom:20px;
+}
+
+/* ========================= */
+/* TEXTO DOS ITENS */
+/* ========================= */
+
+.item p{
+    color:var(--white);
+    font-size:16px;
+    line-height:1.7;
+    font-weight:500;
+}
+
+/* ========================= */
+/* BOTÃO */
+/* ========================= */
+
+.action{
+    min-height:120px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+    width:100%;
+    max-width:220px;
+    height:58px;
+
+    background:var(--secondary-red);
+    color:var(--white);
+    text-decoration:none;
+
+    border-radius:999px;
+    font-size:16px;
+    font-weight:700;
+    transition:.35s ease;
+}
+
+.button svg{
+    font-size:22px;
+}
+
+.button:hover{
+    background:var(--dark-red);
+    transform:translateY(-3px);
+}
+
+.action span{
+    margin-top:18px;
+    color:var(--light-gray);
+
+    font-size:14px;
+    line-height:1.7;
+
+    text-align:center;
+    max-width:220px;
+}
+
+/* ========================= */
+/* HOVER DOS ITENS */
+/* ========================= */
+
+.item{
+    transition:.3s ease;
+}
+
+.item:hover{
+    transform:translateY(-5px);
+}
+
+.item:hover p{
+    color:var(--accent-yellow);
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media(max-width:992px){
+
+    .section{
+        padding:45px 0;
+    }
+
+    .container{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .left{
+        flex-direction:column;
+        text-align:center;
+        justify-content:center;
+
+        padding-right:0;
+        gap:15px;
+    }
+
+    .mainIcon{
+        font-size:50px;
+    }
+
+    .left h2{
+        font-size:24px;
+    }
+
+    .item{
+        border:none;
+        background:var(--light-black);
+        border-radius:16px;
+        min-height:auto;
+        padding:24px;
+    }
+
+    .icon{
+        font-size:30px;
+        margin-bottom:15px;
+    }
+
+    .item p{
+        font-size:16px;
+    }
+
+    .action{
+        border:none;
+        min-height:auto;
+        padding-top:10px;
+    }
+
+    .button{
+        width:100%;
+        max-width:320px;
+        height:56px;
+    }
+
+    .action span{
+        margin-top:15px;
+        font-size:14px;
+    }
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media(max-width:600px){
+
+    .section{
+        padding:35px 0;
+    }
+
+    .container{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .left{
+        grid-column:auto;
+        flex-direction:column;
+        text-align:center;
+
+        gap:15px;
+    }
+
+    .mainIcon{
+        font-size:44px;
+    }
+
+    .left h2{
+        font-size:21px;
+    }
+
+    .item{
+        min-height:auto;
+        padding:20px;
+    }
+
+    .icon{
+        font-size:28px;
+        margin-bottom:12px;
+    }
+
+    .item p{
+        font-size:15px;
+    }
+
+    .action{
+        grid-column:auto;
+    }
+
+    .button{
+        width:100%;
+        max-width:320px;
+    }
+
+    .action span{
+        font-size:13px;
+        margin-top:14px;
+    }
+}
+
+
+/* ========================= */
+/* CELULAR PEQUENO */
+/* ========================= */
+
+@media(max-width:400px){
+
+    .left h2{
+        font-size:18px;
+    }
+
+    .mainIcon{
+        font-size:38px;
+    }
+
+    .icon{
+        font-size:24px;
+    }
+
+    .item p{
+        font-size:14px;
+    }
+
+    .button{
+        height:52px;
+        font-size:15px;
+    }
+}

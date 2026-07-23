@@ -1,0 +1,209 @@
+.banner {
+    position: relative;
+
+    width: 100%;
+    min-height: 85vh;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        url("../../assets/images/van\ transportes.png");
+
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+/* ========================= */
+/* OVERLAY */
+/* ========================= */
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 27, 134, .98) 0%,
+            rgba(0, 27, 134, .95) 28%,
+            rgba(0, 27, 134, .82) 50%,
+            rgba(0, 27, 134, .45) 72%,
+            rgba(0, 27, 134, 0) 100%
+        );
+}
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+
+.container {
+    width: min(1200px, 92%);
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================= */
+/* TEXTO */
+/* ========================= */
+
+.content {
+    max-width: 650px;
+    transform: translateY(-30px);
+}
+
+/* ========================= */
+/* SUBTÍTULO */
+/* ========================= */
+
+.subtitle {
+
+    display: inline-block;
+    color: var(--accent-yellow);
+
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-bottom: 45px;
+}
+
+.subtitle::after {
+    content: "";
+    display: block;
+
+    width: 50px;
+    height: 3px;
+    margin-top: 12px;
+    border-radius: 999px;
+    background: var(--accent-yellow);
+}
+
+/* ========================= */
+/* TÍTULO */
+/* ========================= */
+
+.content h1 {
+    color: var(--white);
+    font-size: 60px;
+    line-height: 1.08;
+}
+
+.content h1 span {
+    color: var(--accent-yellow);
+}
+
+/* ========================= */
+/* PARÁGRAFO */
+/* ========================= */
+
+.content p {
+    margin-top: 20px;
+    max-width: 450px;
+    color: var(--white);
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media(max-width:992px){
+
+    .banner{
+        min-height:70vh;
+        background-position:65% center;
+    }
+
+    .overlay{
+        background:
+        linear-gradient(
+            90deg,
+            rgba(0,27,134,.95) 0%,
+            rgba(0,27,134,.90) 45%,
+            rgba(0,27,134,.60) 75%,
+            rgba(0,27,134,.15) 100%
+        );
+    }
+
+    .content{
+        max-width:560px;
+        transform:none;
+    }
+
+    .subtitle{
+        font-size:18px;
+        letter-spacing:3px;
+        margin-bottom:30px;
+    }
+
+    .content h1{
+        font-size:48px;
+    }
+
+    .content p{
+        font-size:18px;
+        line-height:1.8;
+    }
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media(max-width:600px){
+
+    .banner{
+        min-height:100vh;
+        background-position:center;
+    }
+
+    .overlay{
+        background:
+        linear-gradient(
+            rgba(0,27,134,.88),
+            rgba(0,27,134,.88)
+        );
+    }
+
+    .content{
+        max-width:100%;
+    }
+
+    .subtitle{
+        font-size:15px;
+        letter-spacing:2px;
+        margin-bottom:22px;
+    }
+
+    .content h1{
+        font-size:34px;
+    }
+
+    .content p{
+        max-width:100%;
+        font-size:16px;
+        line-height:1.7;
+    }
+}
+
+/* ========================= */
+/* CELULAR PEQUENO */
+/* ========================= */
+
+@media(max-width:400px){
+
+    .content h1{
+        font-size:30px;
+    }
+    .content p{
+        font-size:15px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+}
