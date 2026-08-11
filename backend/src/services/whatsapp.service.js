@@ -1,36 +1,70 @@
 const axios = require("axios");
-const whatsappMessage = require("../utils/whatsappMessage");
 
+async function enviarWhatsApp(dados) {
+    try {
 
-async function enviarWhatsApp(dados){
+        const mensagem = `
+🚨 NOVO ORÇAMENTO — FFR LOG
 
-    const mensagem = whatsappMessage(dados);
+👤 DADOS DO CLIENTE
+Nome: ${dados.nome || "Não informado"}
+E-mail: ${dados.email || "Não informado"}
+Telefone: ${dados.telefone || "Não informado"}
 
+📦 DADOS DO ORÇAMENTO
+Tipo de transporte: ${dados.tipoTransporte || "Não informado"}
+Serviço: ${dados.servico || "Não informado"}
+Origem: ${dados.origemColeta|| "Não informado"}
+Destino: ${dados.destinoEntrega || "Não informado"}
 
-    await axios.post(
-        `https://graph.facebook.com/v20.0/${process.env.WHATSAPP_PHONE_ID}/messages`,
+📝 OBSERVAÇÕES
+${dados.mensagem || dados.detalhesEntrega || "Nenhuma observação"}
 
-        {
-            messaging_product: "whatsapp",
+────────────────────
+FFR LOG
+Solicitação recebida pelo site.
+        `.trim();
 
-            to: process.env.WHATSAPP_DESTINO,
+        const resposta = await axios.post(
+            `https://graph.facebook.com/v20.0/${process.env.WHATSAPP_PHONE_ID}/messages`,
 
-            type: "text",
+            {
+                messaging_product: "whatsapp",
 
-            text:{
-                body: mensagem
+                to: process.env.WHATSAPP_DESTINO,
+
+                type: "text",
+
+                text: {
+                    body: mensagem
+                }
+            },
+
+            {
+                headers: {
+                    Authorization: `Bearer ${process.env.WHATSAPP_TOKEN}`,
+                    "Content-Type": "application/json"
+                }
             }
-        },
+        );
 
-        {
-            headers:{
-                Authorization:`Bearer ${process.env.WHATSAPP_TOKEN}`,
-                "Content-Type":"application/json"
-            }
+        console.log("WhatsApp enviado com sucesso!");
+        console.log(resposta.data);
+
+    } catch (erro) {
+
+        console.error("ERRO AO ENVIAR WHATSAPP:");
+
+        if (erro.response) {
+            console.error("Status:", erro.response.status);
+            console.error("Resposta da Meta:", erro.response.data);
+        } else {
+            console.error(erro.message);
         }
-    );
 
+        throw erro;
+    }
 }
 
-
 module.exports = enviarWhatsApp;
+
