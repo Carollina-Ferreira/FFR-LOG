@@ -39,7 +39,7 @@ export default function TopBar() {
           <span>Siga nossas redes:</span>
 
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/ffrmotoexpress/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -48,7 +48,7 @@ export default function TopBar() {
           </a>
 
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/share/1DTeijoXBV/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
