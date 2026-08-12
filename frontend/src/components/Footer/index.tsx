@@ -28,20 +28,11 @@ export default function Footer() {
         <div className={styles.contactArea}>
           <h3>Contato</h3>
 
-          ```
-          <a
-            href="https://wa.me/5511999447775"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            (11) 99944-7775
-          </a>
+          <p>(11) 99944-7775</p>
 
-          <a href="mailto:ffrmotoexpress@gmail.com">
+          <p>
             ffrmotoexpress@gmail.com
-          </a>
-          ```
-
+          </p>
         </div>
 
       </div>
