@@ -1,6 +1,6 @@
 import styles from "./style.module.css";
 import { FaArrowRight } from "react-icons/fa6";
-
+import { Link } from "react-router-dom";
 import moto from "../../assets/images/moto realista.png";
 import carro from "../../assets/images/carro realista.png";
 import van from "../../assets/images/van realista.png";
@@ -36,15 +36,15 @@ export default function FleetLine() {
           <h2>
 
             <span className={styles.blue}>
-              Três veículos, <span/>
+              Três veículos, <span />
             </span>
 
             <span className={styles.blue}>
-              um propósito: <span/>
+              um propósito: <span />
             </span>
 
             <span className={styles.red}>
-               entregar com eficiência.
+              entregar com eficiência.
             </span>
 
           </h2>
@@ -54,13 +54,14 @@ export default function FleetLine() {
             entregas e serviços personalizados.
           </p>
 
-          <a
-            href="/orcamento"
+          <Link
+            to="/orcamento"
             className={styles.button}
           >
             Solicitar cotação
             <FaArrowRight />
-          </a>
+          </Link>
+
         </div>
       </div>
 

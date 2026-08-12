@@ -1,5 +1,6 @@
 import styles from "./style.module.css";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function OrcamentoCTA() {
     return (
@@ -16,11 +17,12 @@ export default function OrcamentoCTA() {
                 </div>
 
                 <div className={styles.action}>
-                    <a href="/orcamento" className={styles.button}>
+                    <Link to="/orcamento" className={styles.button}>
                         Solicitar orçamento
                         <FaArrowRight />
-                    </a>
+                    </Link>
                 </div>
+
 
             </div>
         </section>

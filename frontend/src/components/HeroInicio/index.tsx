@@ -1,4 +1,5 @@
 import styles from "./style.module.css";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
 
       <div className={styles.container}>
         <div className={styles.left}>
-         
+
           <h4>FFR LOG</h4>
 
           <h1>
@@ -29,13 +30,15 @@ export default function Hero() {
           </p>
 
           <div className={styles.buttons}>
-            <a href="/orcamento" className={styles.primary}>
-              Solicitar orçamento
-            </a>
 
-            <a href="/empresa" className={styles.secondary}>
+            <Link to="/orcamento" className={styles.primary}>
+              Solicitar orçamento
+            </Link>
+
+            <Link to="/empresa" className={styles.secondary}>
               Conheça a empresa
-            </a>
+            </Link>
+
           </div>
         </div>
       </div>
