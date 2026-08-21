@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import styles from "./style.module.css";
 
 import {
@@ -19,6 +21,8 @@ import { enviarOrcamento } from "../../services/orcamento.service";
 
 export default function OrcamentoForm() {
 
+    const [enviando, setEnviando] = useState(false);
+
 
     async function handleSubmit(
         e: React.FormEvent<HTMLFormElement>
@@ -28,6 +32,7 @@ export default function OrcamentoForm() {
 
         const form = e.currentTarget;
 
+
         if (!form.checkValidity()) {
 
             form.reportValidity();
@@ -35,6 +40,7 @@ export default function OrcamentoForm() {
             return;
 
         }
+
 
         const dados = {
 
@@ -54,34 +60,46 @@ export default function OrcamentoForm() {
 
         };
 
+
         try {
+
+            setEnviando(true);
+
 
             await enviarOrcamento(dados);
 
+
             alert("Orçamento enviado com sucesso!");
+
 
             form.reset();
 
+
         } catch (error: any) {
 
-            console.error(error);
+            console.error("Erro ao enviar orçamento:", error);
+
 
             alert(
                 error.response?.data?.message ||
                 "Erro ao enviar orçamento."
             );
 
+
+        } finally {
+
+            setEnviando(false);
+
         }
 
     }
 
 
-
     return (
+
         <section className={styles.section}>
 
             <div className={`${styles.container} container`}>
-
 
 
                 {/* ================= CARD ESQUERDO ================= */}
@@ -89,7 +107,10 @@ export default function OrcamentoForm() {
                 <div className={styles.formCard}>
 
 
-                    <h2>Dados do orçamento</h2>
+                    <h2>
+                        Dados do orçamento
+                    </h2>
+
 
                     <div className={styles.lineRed}></div>
 
@@ -101,7 +122,10 @@ export default function OrcamentoForm() {
                     >
 
 
+                        {/* NOME */}
+
                         <div className={styles.inputGroup}>
+
                             <FaUser />
 
                             <input
@@ -117,7 +141,10 @@ export default function OrcamentoForm() {
 
 
 
+                        {/* EMAIL */}
+
                         <div className={styles.inputGroup}>
+
                             <FaEnvelope />
 
                             <input
@@ -126,11 +153,15 @@ export default function OrcamentoForm() {
                                 placeholder="E-mail"
                                 required
                             />
+
                         </div>
 
 
 
+                        {/* TELEFONE */}
+
                         <div className={styles.inputGroup}>
+
                             <FaPhone />
 
                             <input
@@ -141,7 +172,10 @@ export default function OrcamentoForm() {
                                 maxLength={11}
                                 inputMode="numeric"
                                 onInput={(e) => {
-                                    e.currentTarget.value = e.currentTarget.value.replace(/\D/g, "");
+
+                                    e.currentTarget.value =
+                                        e.currentTarget.value.replace(/\D/g, "");
+
                                 }}
                             />
 
@@ -149,8 +183,11 @@ export default function OrcamentoForm() {
 
 
 
+                        {/* TIPO DE TRANSPORTE */}
 
-                        <label>Tipo de transporte</label>
+                        <label>
+                            Tipo de transporte
+                        </label>
 
 
                         <div className={styles.inputGroup}>
@@ -162,6 +199,7 @@ export default function OrcamentoForm() {
                                 name="tipoTransporte"
                                 required
                             >
+
                                 <option value="">
                                     Selecione
                                 </option>
@@ -184,8 +222,11 @@ export default function OrcamentoForm() {
 
 
 
+                        {/* ORIGEM */}
 
-                        <label>Origem da coleta</label>
+                        <label>
+                            Origem da coleta
+                        </label>
 
 
                         <div className={styles.inputGroup}>
@@ -204,12 +245,14 @@ export default function OrcamentoForm() {
 
 
 
+                        {/* DESTINO */}
 
-                        <label>Destino da entrega</label>
+                        <label>
+                            Destino da entrega
+                        </label>
 
 
                         <div className={styles.inputGroup}>
-
 
                             <FaMapMarkerAlt />
 
@@ -221,12 +264,11 @@ export default function OrcamentoForm() {
                                 required
                             />
 
-
                         </div>
 
 
 
-
+                        {/* DETALHES */}
 
                         <label>
                             Detalhes da entrega
@@ -234,7 +276,6 @@ export default function OrcamentoForm() {
 
 
                         <div className={styles.inputGroup}>
-
 
                             <FaClipboardList
                                 className={styles.textIcon}
@@ -247,20 +288,23 @@ export default function OrcamentoForm() {
                                 placeholder="Descreva o que precisa ser entregue, peso, dimensões, observações, etc."
                             />
 
-
                         </div>
 
 
 
+                        {/* BOTÃO */}
 
+                        <button
+                            type="submit"
+                            disabled={enviando}
+                        >
 
-                        <button type="submit">
-
-                            SOLICITAR ORÇAMENTO
+                            {enviando
+                                ? "ENVIANDO..."
+                                : "SOLICITAR ORÇAMENTO"
+                            }
 
                         </button>
-
-
 
 
                     </form>
@@ -270,10 +314,7 @@ export default function OrcamentoForm() {
 
 
 
-
-
                 {/* ================= CARD DIREITO ================= */}
-
 
                 <div className={styles.infoCard}>
 
@@ -289,6 +330,8 @@ export default function OrcamentoForm() {
                         <div className={styles.lineRed}></div>
 
 
+
+                        {/* ORÇAMENTO RÁPIDO */}
 
                         <div className={styles.infoItem}>
 
@@ -310,6 +353,7 @@ export default function OrcamentoForm() {
 
 
 
+                        {/* SEM COMPROMISSO */}
 
                         <div className={styles.infoItem}>
 
@@ -331,6 +375,7 @@ export default function OrcamentoForm() {
 
 
 
+                        {/* ATENDIMENTO */}
 
                         <div className={styles.infoItem}>
 
@@ -352,6 +397,7 @@ export default function OrcamentoForm() {
 
 
 
+                        {/* SEGURANÇA */}
 
                         <div className={styles.infoItem}>
 
@@ -372,12 +418,11 @@ export default function OrcamentoForm() {
                         </div>
 
 
-
                     </div>
 
 
 
-
+                    {/* ================= CONTATO ================= */}
 
                     <div className={styles.contactBox}>
 
@@ -393,6 +438,7 @@ export default function OrcamentoForm() {
 
 
 
+                        {/* WHATSAPP */}
 
                         <div className={styles.contact}>
 
@@ -415,14 +461,13 @@ export default function OrcamentoForm() {
 
                             </div>
 
-
                         </div>
 
 
 
+                        {/* TELEFONE */}
 
                         <div className={styles.contact}>
-
 
                             <div className={styles.contactIcon}>
 
@@ -441,18 +486,15 @@ export default function OrcamentoForm() {
                                     (11) 99944-7775
                                 </span>
 
-
                             </div>
-
 
                         </div>
 
 
 
-
+                        {/* EMAIL */}
 
                         <div className={styles.contact}>
-
 
                             <div className={styles.contactIcon}>
 
@@ -461,39 +503,31 @@ export default function OrcamentoForm() {
                             </div>
 
 
-
                             <div className={styles.contactInfo}>
-
 
                                 <h5>
                                     E-mail
                                 </h5>
 
-
                                 <span>
                                     ffrmotoexpress@gmail.com
                                 </span>
 
-
                             </div>
 
-
                         </div>
-
-
 
 
                     </div>
 
 
-
                 </div>
-
 
 
             </div>
 
-
         </section>
+
     );
+
 }
