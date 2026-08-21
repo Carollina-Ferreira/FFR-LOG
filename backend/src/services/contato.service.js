@@ -6,62 +6,103 @@ const enviarWhatsApp = require("./whatsapp.service");
 
 async function criarContato(data) {
 
+    // ==========================================
+    // SALVAR NO BANCO
+    // ==========================================
+
     const contato = await prisma.contato.create({
         data
     });
 
 
-    try {
+    // ==========================================
+    // ENVIO DE EMAIL
+    // NÃO BLOQUEIA O CONTATO
+    // ==========================================
 
-        await enviarEmail({
+    enviarEmail({
 
-            tipo: "Contato",
+        tipo: "Contato",
 
-            ...data
+        ...data
+
+    })
+
+        .then(() => {
+
+            console.log("✅ Email de contato enviado com sucesso.");
+
+        })
+
+        .catch((error) => {
+
+            console.log(
+                "❌ Erro email de contato:",
+                error.message
+            );
 
         });
 
-    } catch(error) {
 
-        console.log("Erro email:", error.message);
+    // ==========================================
+    // ENVIO DE WHATSAPP
+    // NÃO BLOQUEIA O CONTATO
+    // ==========================================
 
-    }
+    enviarWhatsApp({
 
+        tipo: "Contato",
 
-    try {
+        ...data
 
-        await enviarWhatsApp({
+    })
 
-            tipo: "Contato",
+        .then(() => {
 
-            ...data
+            console.log("✅ WhatsApp de contato enviado com sucesso.");
+
+        })
+
+        .catch((error) => {
+
+            console.log(
+                "❌ Erro WhatsApp de contato:",
+                error.message
+            );
 
         });
 
-    } catch(error) {
 
-        console.log("Erro WhatsApp:", error.message);
-
-    }
-
+    // ==========================================
+    // RETORNA IMEDIATAMENTE
+    // ==========================================
 
     return contato;
 
 }
 
 
+
 async function listarContatos() {
 
     return await prisma.contato.findMany({
-        orderBy:{
-            createdAt:"desc"
+
+        orderBy: {
+
+            createdAt: "desc"
+
         }
+
     });
 
 }
 
 
+
 module.exports = {
+
     criarContato,
+
     listarContatos
+
 };

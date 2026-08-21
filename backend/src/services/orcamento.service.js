@@ -29,6 +29,10 @@ async function criarOrcamento(data) {
     } = data;
 
 
+    // ==========================================
+    // SALVAR NO BANCO
+    // ==========================================
+
     const orcamento = await prisma.orcamento.create({
 
         data: {
@@ -56,65 +60,91 @@ async function criarOrcamento(data) {
     });
 
 
-    // Envia email
-    try {
+    // ==========================================
+    // ENVIO DE EMAIL
+    // NÃO BLOQUEIA O ORÇAMENTO
+    // ==========================================
 
-        await enviarEmail({
+    enviarEmail({
 
-            tipo: "Orçamento",
+        tipo: "Orçamento",
 
-            nome,
+        nome,
 
-            email,
+        email,
 
-            telefone,
+        telefone,
 
-            tipoTransporte,
+        tipoTransporte,
 
-            origemColeta,
+        origemColeta,
 
-            destinoEntrega,
+        destinoEntrega,
 
-            detalhesEntrega
+        detalhesEntrega
 
-        });
+    })
 
-    } catch (error) {
+        .then(() => {
 
-        console.log("Erro email:", error.message);
+            console.log("✅ Email enviado com sucesso.");
 
-    }
+        })
 
+        .catch((error) => {
 
-    // Envia WhatsApp
-    try {
-
-        await enviarWhatsApp({
-
-            tipo: "Orçamento",
-
-            nome,
-
-            email,
-
-            telefone,
-
-            tipoTransporte,
-
-            origemColeta,
-
-            destinoEntrega,
-
-            detalhesEntrega
+            console.log(
+                "❌ Erro email:",
+                error.message
+            );
 
         });
 
-    } catch (error) {
 
-        console.log("Erro WhatsApp:", error.message);
+    // ==========================================
+    // ENVIO DE WHATSAPP
+    // NÃO BLOQUEIA O ORÇAMENTO
+    // ==========================================
 
-    }
+    enviarWhatsApp({
 
+        tipo: "Orçamento",
+
+        nome,
+
+        email,
+
+        telefone,
+
+        tipoTransporte,
+
+        origemColeta,
+
+        destinoEntrega,
+
+        detalhesEntrega
+
+    })
+
+        .then(() => {
+
+            console.log("✅ WhatsApp enviado com sucesso.");
+
+        })
+
+        .catch((error) => {
+
+            console.log(
+                "❌ Erro WhatsApp:",
+                error.message
+            );
+
+        });
+
+
+    // ==========================================
+    // RETORNA IMEDIATAMENTE
+    // ==========================================
 
     return orcamento;
 
